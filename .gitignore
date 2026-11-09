@@ -1,4 +1,5 @@
 node_modules/
-public/
+public/*
+!public/screenshot.png
 .wrangler/
 .dev.vars
