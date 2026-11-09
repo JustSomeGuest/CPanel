@@ -4,8 +4,8 @@ const html = `<!doctype html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111115">
-    <meta name="description" content="CPanel — A centralized Roblox control panel. Participant management, player actions, audio, visual effects and camera control in one interface.">
-    <title>CPanel — A centralized Roblox control panel</title>
+    <meta name="description" content="CPanel - A centralized Roblox control panel. Participant management, player actions, audio, visual effects and camera control in one interface.">
+    <title>CPanel - A centralized Roblox control panel</title>
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,7 +166,7 @@ const html = `<!doctype html>
         </section>
 
         <section class="section" id="panel">
-            <div class="section-heading"><div class="eyebrow">THE PANEL</div><h2>Eight tabs, sorted by job.</h2><p>The reworked client groups everything into focused tabs. Pick a tab to see what lives inside it.</p></div>
+            <div class="section-heading"><div class="eyebrow">THE PANEL</div><h2>Everything, sorted into eight tabs.</h2><p>The client splits the whole panel into tabs. Pick one to see what's inside.</p></div>
             <div class="tabs" role="tablist">
                 <button class="tab active" type="button" data-tab="dashboard">Dashboard</button>
                 <button class="tab" type="button" data-tab="general">General</button>
@@ -209,11 +209,11 @@ const html = `<!doctype html>
                     <article class="item"><h4>Grayscale</h4><p>Temporary desaturation.</p></article>
                     <article class="item"><h4>Invert Colors</h4><p>Temporary color inversion.</p></article>
                     <article class="item"><h4>Screen Tint</h4><p>Full-screen tint with R/G/B.</p></article>
-                    <article class="item"><h4>Duration</h4><p>Every effect takes 0.2 – 120 seconds, or leave it empty for the default.</p></article>
+                    <article class="item"><h4>Duration</h4><p>Every effect takes 0.2 to 120 seconds, leave it empty to use the default.</p></article>
                     <article class="item"><h4>Restore Effects</h4><p>Remove all CPanel visual effects at once.</p></article>
                 </div>
                 <div class="tab-panel" data-panel="fun">
-                    <article class="item"><h4>Fling</h4><p>Launch them — force comes from the slider, 1 pops them up, 10 throws them across the map.</p></article>
+                    <article class="item"><h4>Fling</h4><p>Launch them, with force from the slider. 1 pops them up, 10 throws them across the map.</p></article>
                     <article class="item"><h4>Character Highlight</h4><p>Temporary highlight on their character, with R/G/B.</p></article>
                     <article class="item"><h4>Character Outline</h4><p>Outline-only highlight.</p></article>
                     <article class="item"><h4>Nameplate Decoration</h4><p>Overhead nameplate for a while.</p></article>
@@ -250,7 +250,7 @@ const html = `<!doctype html>
 end)</code></pre>
             </div>
             <div class="raw-callout"><div class="raw-symbol">↗</div><div><strong>Inspect the source before you run it</strong><p><a href="/raw" target="_blank" rel="noreferrer">getcpanel.pages.dev/raw</a> always serves the latest client as plain text.</p></div></div>
-            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Developer loader</strong><p>Developers set <code>getgenv().CPanelDevToken</code> before loading. Participants don't need a token — the loader above is enough.</p></div></div>
+            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Developer loader</strong><p>Developers set <code>getgenv().CPanelDevToken</code> before loading. Participants don't need a token, the loader above is enough.</p></div></div>
         </section>
 
         <section class="section" id="how-it-works">
@@ -276,10 +276,10 @@ end)</code></pre>
         </section>
 
         <section class="section" id="backend">
-            <div class="section-heading"><div class="eyebrow">WEBSOCKET BACKEND</div><h2>Bring your own server.</h2><p>CPanel requires its own hosted WebSocket backend — it does not connect on its own.</p></div>
+            <div class="section-heading"><div class="eyebrow">WEBSOCKET BACKEND</div><h2>Bring your own server.</h2><p>CPanel needs its own hosted WebSocket backend, it won't connect on its own.</p></div>
             <div class="backend-card">
                 <h3>CPanelWebsocket</h3>
-                <p>Deploy it as a Web Service on <a class="inline" href="https://render.com/" target="_blank" rel="noreferrer">Render</a> — repo: <a class="inline" href="https://github.com/JustSomeGuest/CPanelWebsocket" target="_blank" rel="noreferrer">JustSomeGuest/CPanelWebsocket</a></p>
+                <p>Deploy it as a Web Service on <a class="inline" href="https://render.com/" target="_blank" rel="noreferrer">Render</a>, repo: <a class="inline" href="https://github.com/JustSomeGuest/CPanelWebsocket" target="_blank" rel="noreferrer">JustSomeGuest/CPanelWebsocket</a></p>
                 <ol class="backend-steps">
                     <li>Clone the CPanelWebsocket repository and push it to your GitHub account.</li>
                     <li>Create a new Web Service on Render and connect the repository.</li>
