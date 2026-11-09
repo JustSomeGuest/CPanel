@@ -1,7 +1,7 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
-const url = "https://raw.githubusercontent.com/JustSomeGuest/Scripts/Main/Utilities/CPanel/logo.png";
+const url = "https://raw.githubusercontent.com/JustSomeGuest/Scripts/Main/Utilities/CPanel/Logo.png";
 const destination = path.join(__dirname, "..", "public", "logo.png");
 
 async function main() {
@@ -15,6 +15,7 @@ async function main() {
         throw new Error("Logo download returned an empty file.");
     }
 
+    await fs.mkdir(path.dirname(destination), { recursive: true });
     await fs.writeFile(destination, buffer);
     console.log("CPanel logo saved to public/logo.png");
 }
