@@ -7,7 +7,6 @@ const html = `<!doctype html>
     <meta name="description" content="CPanel - A centralized Roblox control panel. Participant management, player actions, audio, visual effects and camera control in one interface.">
     <title>CPanel - A centralized Roblox control panel</title>
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CPanel">
     <meta property="og:title" content="CPanel">
     <meta property="og:description" content="A centralized Roblox control panel. Manage connected participants, player actions, audio, visuals and camera effects from one window.">
     <meta property="og:url" content="https://getcpanel.pages.dev/">
