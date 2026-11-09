@@ -4,7 +4,7 @@ const html = `<!doctype html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111115">
-    <meta name="description" content="CPanel — A centralized Roblox control panel for developers.">
+    <meta name="description" content="CPanel — A centralized Roblox control panel. Participant management, player actions, audio, visual effects and camera control in one interface.">
     <title>CPanel — A centralized Roblox control panel</title>
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
@@ -46,12 +46,12 @@ const html = `<!doctype html>
         .topnav a:hover, .footer a:hover { color: white; }
         .topnav .raw-link { color: #d9d9e2; }
         .raw-link span { color: #7fa9ff; }
-        .hero { max-width: 1240px; margin: 0 auto; padding: 88px 34px 72px; display: grid; grid-template-columns: .88fr 1.12fr; gap: 48px; align-items: center; }
+        .hero { max-width: 1240px; margin: 0 auto; padding: 86px 34px 70px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
         .eyebrow { display: flex; align-items: center; gap: 9px; color: #8caeff; font-size: 10px; font-weight: 800; letter-spacing: 1.55px; text-transform: uppercase; }
         .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px #54c99577; }
         h1 { margin: 22px 0 18px; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.08; letter-spacing: -2.8px; font-weight: 800; }
         h1 span { color: #8baeff; }
-        .hero-description { max-width: 470px; color: #a1a1ad; font-size: 15px; line-height: 1.85; }
+        .hero-description { max-width: 480px; color: #a1a1ad; font-size: 15px; line-height: 1.85; }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
         .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 0 19px; border-radius: 12px; font-size: 13px; font-weight: 700; transition: transform .18s, background .18s; }
         .button:hover { transform: translateY(-2px); }
@@ -60,29 +60,25 @@ const html = `<!doctype html>
         .secondary { background: #202027; border: 1px solid var(--line); color: #d0d0d9; }
         .hero-note { margin-top: 22px; color: #777783; font-size: 11px; }
         .hero-note b { color: var(--green); margin-right: 6px; }
-        .shot { overflow: hidden; border: 1px solid #34343d; border-radius: 22px; background: #111115; box-shadow: 0 35px 100px #0008, 0 0 0 5px #ffffff04; transform: perspective(1400px) rotateY(-3deg) rotateX(1deg); }
-        .shot-bar { height: 54px; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #24242b; background: #17171c; }
-        .shot-brand { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; letter-spacing: -.4px; }
-        .shot-brand img { width: 24px; height: 24px; object-fit: contain; }
-        .shot-status { display: flex; align-items: center; gap: 8px; color: var(--green); font-size: 11px; }
-        .shot-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-        .traffic { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-left: 7px; }
-        .yellow { background: var(--amber); }
-        .red { background: #f05b5c; margin-left: 0; }
+        .shot { overflow: hidden; border: 1px solid #34343d; border-radius: 20px; background: #111115; box-shadow: 0 35px 100px #0008, 0 0 0 5px #ffffff04; transform: perspective(1400px) rotateY(-3deg) rotateX(1deg); }
         .shot img { display: block; width: 100%; height: auto; }
         .section, .get-started { max-width: 1172px; margin: 0 auto; padding: 74px 34px; }
         .section { border-top: 1px solid var(--line); }
         .section-heading { text-align: center; }
         .section-heading .eyebrow { justify-content: center; }
         h2 { margin: 13px 0 10px; font-size: clamp(28px, 3vw, 38px); letter-spacing: -1.5px; }
-        .section-heading > p { margin: 0 auto; max-width: 620px; color: var(--muted); font-size: 13px; line-height: 1.8; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 38px; }
-        .feature-card { padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(145deg, #1a1a21, #15151a); }
-        .feature-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; background: #397ff41b; color: #83aaff; font-size: 19px; }
-        .feature-card h3 { margin: 19px 0 8px; font-size: 15px; }
-        .feature-card p { margin: 0; color: #92929e; font-size: 12px; line-height: 1.8; }
-        .feature-card ul { margin: 10px 0 0; padding: 0; list-style: none; color: #92929e; font-size: 12px; line-height: 1.9; }
-        .feature-card li:before { content: '›'; color: #6f9dff; margin-right: 8px; font-weight: 700; }
+        .section-heading > p { margin: 0 auto; max-width: 640px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+        .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 36px; }
+        .tab { padding: 10px 16px; border: 1px solid var(--line); border-radius: 11px; background: #17171d; color: #a6a6b1; font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: background .16s, color .16s, transform .16s; }
+        .tab:hover { color: #e6e6ee; transform: translateY(-1px); }
+        .tab.active { background: var(--blue); border-color: transparent; color: white; box-shadow: 0 8px 22px #397ff42b; }
+        .tab-panels { margin-top: 26px; }
+        .tab-panel { display: none; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+        .tab-panel.active { display: grid; }
+        .item { padding: 20px 21px; border: 1px solid var(--line); border-radius: 15px; background: linear-gradient(145deg, #1a1a21, #15151a); }
+        .item h4 { margin: 0 0 7px; font-size: 13.5px; letter-spacing: -.2px; }
+        .item p { margin: 0; color: #92929e; font-size: 12px; line-height: 1.8; }
+        .item .tag { display: inline-block; margin-top: 11px; padding: 3px 8px; border-radius: 6px; background: #397ff41c; color: #8db1ff; font-size: 9.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
         .code-card { max-width: 760px; margin: 32px auto 0; overflow: hidden; border: 1px solid #30303a; border-radius: 15px; background: #141419; box-shadow: 0 18px 55px #0003; }
         .code-toolbar { height: 48px; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; background: #1b1b22; border-bottom: 1px solid var(--line); }
         .code-label { color: #dedee7; font-size: 11px; font-weight: 700; }
@@ -95,7 +91,7 @@ const html = `<!doctype html>
         .raw-symbol { width: 32px; height: 32px; flex: none; display: grid; place-items: center; border-radius: 9px; color: #8db1ff; background: #397ff41c; }
         .raw-callout strong, .note-callout strong { font-size: 12px; }
         .raw-callout p, .note-callout p { margin: 4px 0 0; color: #92929e; font-size: 11px; line-height: 1.7; }
-        .raw-callout a, .raw-callout code { color: #8db1ff; }
+        .raw-callout a { color: #8db1ff; }
         .raw-callout code { color: #c4c4cf; }
         .note-callout { align-items: flex-start; border-color: #f4bd3933; background: #f4bd390f; }
         .note-callout .raw-symbol { color: var(--amber); background: #f4bd391c; }
@@ -122,7 +118,7 @@ const html = `<!doctype html>
         .footer-brand img { width: 22px; height: 22px; object-fit: contain; }
         .footer a:last-child { color: #a9c3ff; }
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; gap: 45px; padding-top: 70px; }
+            .hero { grid-template-columns: 1fr; gap: 42px; padding-top: 68px; }
             .hero-copy { max-width: 650px; }
             .shot { transform: none; max-width: 760px; width: 100%; margin: auto; }
         }
@@ -131,11 +127,9 @@ const html = `<!doctype html>
             .brand { font-size: 19px; }
             .topnav { gap: 14px; font-size: 11px; }
             .topnav a:nth-child(2), .topnav a:nth-child(3) { display: none; }
-            .hero { padding: 58px 20px 55px; }
+            .hero { padding: 56px 20px 52px; }
             h1 { letter-spacing: -1.8px; }
-            .shot-bar { height: 46px; padding: 0 14px; }
             .section, .get-started { padding: 55px 20px; }
-            .feature-grid { grid-template-columns: 1fr; }
             .footer { padding: 22px 20px; flex-wrap: wrap; gap: 14px; }
             .footer > span { order: 3; width: 100%; }
         }
@@ -146,7 +140,7 @@ const html = `<!doctype html>
     <header class="topbar">
         <a class="brand" href="/" aria-label="CPanel home"><img src="/logo.png" alt=""><span>CPanel</span></a>
         <nav class="topnav" aria-label="Main navigation">
-            <a href="#overview">Overview</a><a href="#features">Features</a><a href="#how-it-works">How it works</a><a href="#get-started">Get started</a>
+            <a href="#overview">Overview</a><a href="#panel">The panel</a><a href="#get-started">Get started</a>
             <a class="raw-link" href="/raw" target="_blank" rel="noreferrer">Raw source <span>↗</span></a>
         </nav>
     </header>
@@ -155,55 +149,109 @@ const html = `<!doctype html>
             <div class="hero-copy">
                 <div class="eyebrow"><span class="status-dot"></span> A centralized Roblox control panel</div>
                 <h1>One panel for<br><span>every connected user.</span></h1>
-                <p class="hero-description">CPanel is a client-side control panel for developers who want to interact with users connected to their scripts through a centralized WebSocket server. Participant management, player actions, audio, visual effects and camera controls — all in one interface.</p>
-                <div class="hero-actions"><a class="button primary" href="#get-started">Get started <span>↗</span></a><a class="button secondary" href="#features">Explore features</a></div>
+                <p class="hero-description">CPanel is a client-side control panel for developers who want to interact with users connected to their scripts through a centralized WebSocket server. Run participants, player actions, audio, visuals and camera effects from a single window.</p>
+                <div class="hero-actions"><a class="button primary" href="#get-started">Get started <span>↗</span></a><a class="button secondary" href="#panel">Explore the panel</a></div>
                 <div class="hero-note"><b>✓</b> Connected users appear in the participant list the moment your script runs.</div>
             </div>
-            <div class="shot" aria-label="CPanel interface screenshot">
-                <div class="shot-bar">
-                    <div class="shot-brand"><img src="/logo.png" alt=""><span>CPanel</span></div>
-                    <div class="shot-status"><i></i> Connected <b class="traffic yellow"></b><b class="traffic red"></b></div>
-                </div>
-                <img src="/screenshot.png" alt="CPanel dashboard screenshot" loading="eager" width="1802" height="1014">
-            </div>
+            <div class="shot"><img src="/screenshot.png" alt="CPanel dashboard screenshot" loading="eager" width="1802" height="1014"></div>
         </section>
 
-        <section class="section" id="features">
-            <div class="section-heading"><div class="eyebrow">FEATURES</div><h2>Everything in one interface.</h2><p>Authorized developers manage sessions, trigger actions and control client-side effects through the dashboard.</p></div>
-            <div class="feature-grid">
-                <article class="feature-card"><div class="feature-icon">☰</div><h3>Participant Management</h3><p>Run the connected crowd from a single list.</p><ul><li>Live participant list with search and refresh</li><li>Individual participant selection</li><li>Join participant game servers</li><li>Connection and effect status</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">◎</div><h3>Player Actions</h3><p>Direct control over the selected participant.</p><ul><li>Freeze and unfreeze</li><li>Kill</li><li>Bring</li><li>Goto</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">♪</div><h3>Audio</h3><p>Play Roblox audio assets by ID.</p><ul><li>Stop playback and loop audio</li><li>Volume control</li><li>Restore default volume</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">✦</div><h3>Visual Effects</h3><p>Client-side screen effects, on demand.</p><ul><li>Screen flash, blur and color effects</li><li>FOV adjustment</li><li>Grayscale and invert</li><li>Screen tint and restore defaults</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">◫</div><h3>Camera &amp; Environment</h3><p>Camera, lighting and world effects.</p><ul><li>Camera shake and zoom</li><li>Lighting, vignette and distortion</li><li>Particles and confetti</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">✧</div><h3>Additional Effects</h3><p>Small touches on top of the core toolkit.</p><ul><li>Highlights</li><li>Nameplates</li><li>Overhead notifications</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">⚙</div><h3>Dashboard</h3><p>Make the panel yours.</p><ul><li>6 theme presets, transparency, animations</li><li>Interface sounds and notifications</li><li>Automatic reconnection, refresh interval</li><li>Settings reset</li></ul></article>
-                <article class="feature-card"><div class="feature-icon">⟳</div><h3>Automatic Reconnection</h3><p>The client reconnects when the socket drops, so participants stay registered without reloading the script.</p></article>
-                <article class="feature-card"><div class="feature-icon">↗</div><h3>Raw Source</h3><p>Every build serves the latest <b>Init.lua</b> as plain text at <a href="/raw" target="_blank" rel="noreferrer" style="color:#8db1ff">/raw</a>, so you always know what you are running.</p></article>
+        <section class="section" id="panel">
+            <div class="section-heading"><div class="eyebrow">THE PANEL</div><h2>Eight tabs, sorted by job.</h2><p>The reworked client groups everything into focused tabs. Pick a tab to see what lives inside it.</p></div>
+            <div class="tabs" role="tablist">
+                <button class="tab active" type="button" data-tab="dashboard">Dashboard</button>
+                <button class="tab" type="button" data-tab="general">General</button>
+                <button class="tab" type="button" data-tab="spectate">Spectate</button>
+                <button class="tab" type="button" data-tab="audio">Audio</button>
+                <button class="tab" type="button" data-tab="visual">Visual</button>
+                <button class="tab" type="button" data-tab="fun">Fun</button>
+                <button class="tab" type="button" data-tab="chat">Chat Logs</button>
+                <button class="tab" type="button" data-tab="settings">Settings</button>
+            </div>
+            <div class="tab-panels">
+                <div class="tab-panel active" data-panel="dashboard">
+                    <article class="item"><h4>Participants</h4><p>Live list with search and refresh. Select one to unlock the action tabs, join their game server or hop to a new one.</p><span class="tag">Live</span></article>
+                    <article class="item"><h4>Session</h4><p>Current place, universe ID and the selected participant's profile at a glance.</p></article>
+                    <article class="item"><h4>Connection</h4><p>WebSocket status, endpoint and developer authentication through <b>access.json</b>.</p></article>
+                    <article class="item"><h4>Effect Management</h4><p>Stop all effects, clear temporary ones, restore defaults or refresh what's currently running.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="general">
+                    <article class="item"><h4>Freeze</h4><p>Immobilize the participant.</p></article>
+                    <article class="item"><h4>Unfreeze</h4><p>Restore normal movement.</p></article>
+                    <article class="item"><h4>Kill / Reset</h4><p>Set their HP to 0 instantly.</p></article>
+                    <article class="item"><h4>Bring</h4><p>Move the participant to you.</p></article>
+                    <article class="item"><h4>Goto</h4><p>Move yourself to the participant.</p></article>
+                    <article class="item"><h4>Send notification</h4><p>Deliver a message that pops up on their screen.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="spectate">
+                    <article class="item"><h4>View</h4><p>Spectate the selected participant.</p></article>
+                    <article class="item"><h4>Unview</h4><p>Put the camera back on your character.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="audio">
+                    <article class="item"><h4>Play Sound</h4><p>Play any Roblox audio asset by ID (<b>rbxassetid://</b> works too), with volume from 0.10 to 10.00 and an optional loop.</p></article>
+                    <article class="item"><h4>Sound Controls</h4><p>Play, stop, stop all sounds, adjust volume, disable loop or restore the default volume.</p></article>
+                    <article class="item"><h4>Playback Status</h4><p>Refresh to see what is currently playing on their end.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="visual">
+                    <article class="item"><h4>Screen Flash</h4><p>Brief full-screen flash.</p></article>
+                    <article class="item"><h4>Color Effect</h4><p>Temporary color grading with R/G/B.</p></article>
+                    <article class="item"><h4>Blur</h4><p>Temporary screen blur.</p></article>
+                    <article class="item"><h4>FOV Control</h4><p>Increase, decrease or reset the field of view.</p></article>
+                    <article class="item"><h4>Grayscale</h4><p>Temporary desaturation.</p></article>
+                    <article class="item"><h4>Invert Colors</h4><p>Temporary color inversion.</p></article>
+                    <article class="item"><h4>Screen Tint</h4><p>Full-screen tint with R/G/B.</p></article>
+                    <article class="item"><h4>Duration</h4><p>Every effect takes 0.2 – 120 seconds, or leave it empty for the default.</p></article>
+                    <article class="item"><h4>Restore Effects</h4><p>Remove all CPanel visual effects at once.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="fun">
+                    <article class="item"><h4>Fling</h4><p>Launch them — force comes from the slider, 1 pops them up, 10 throws them across the map.</p></article>
+                    <article class="item"><h4>Character Highlight</h4><p>Temporary highlight on their character, with R/G/B.</p></article>
+                    <article class="item"><h4>Character Outline</h4><p>Outline-only highlight.</p></article>
+                    <article class="item"><h4>Nameplate Decoration</h4><p>Overhead nameplate for a while.</p></article>
+                    <article class="item"><h4>Overhead Notification</h4><p>Pulsing overhead message.</p></article>
+                    <article class="item"><h4>Screen Vignette</h4><p>Dark vignette around the screen edges.</p></article>
+                    <article class="item"><h4>Camera Shake</h4><p>Lightweight camera shake.</p></article>
+                    <article class="item"><h4>Camera Zoom</h4><p>Zoom the camera in and lock it.</p></article>
+                    <article class="item"><h4>Lighting Effect</h4><p>Temporary lighting mood with R/G/B.</p></article>
+                    <article class="item"><h4>Particle Effect</h4><p>Character sparkles with R/G/B.</p></article>
+                    <article class="item"><h4>Visual Distortion</h4><p>Pulsing color distortion.</p></article>
+                    <article class="item"><h4>Confetti</h4><p>Falling confetti on their screen.</p></article>
+                    <article class="item"><h4>Restore All Effects</h4><p>Stop every active CPanel effect.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="chat">
+                    <article class="item"><h4>Chat Logs</h4><p>Live chat feed from the server, with an option to show only connected users.</p></article>
+                    <article class="item"><h4>Send as selected user</h4><p>Send a message as the participant you have selected.</p></article>
+                </div>
+                <div class="tab-panel" data-panel="settings">
+                    <article class="item"><h4>Appearance</h4><p>UI theme, interface transparency and animations.</p></article>
+                    <article class="item"><h4>Notifications</h4><p>Toast notifications and interface sounds.</p></article>
+                    <article class="item"><h4>Connection</h4><p>WebSocket status, endpoint, auto-reconnect, participant list refresh interval and a manual reconnect button.</p></article>
+                    <article class="item"><h4>Reset</h4><p>Reset UI settings back to defaults in one click.</p></article>
+                </div>
             </div>
         </section>
 
         <section class="get-started" id="get-started">
-            <div class="section-heading"><div class="eyebrow">LOADER</div><h2>Add it to your script.</h2><p>Once loaded, the CPanel client connects to your configured WebSocket server and registers as a participant.</p></div>
+            <div class="section-heading"><div class="eyebrow">LOADER</div><h2>Add it to your script.</h2><p>Once loaded, the client connects to your WebSocket server and registers as a participant.</p></div>
             <div class="code-card">
                 <div class="code-toolbar"><div class="code-label"><span class="language-dot"></span> Lua <span class="code-muted">· Participant loader</span></div><button class="copy-button" id="copy-loader" type="button">▢ Copy</button></div>
                 <pre><code id="loader-code">task.spawn(function()
     getgenv().CPanelWebsocket = "wss://your-websocket.onrender.com"
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/JustSomeGuest/Scripts/Main/Utilities/CPanel/Init.lua"))()
+    loadstring(game:HttpGet("https://getcpanel.pages.dev/raw"))()
 end)</code></pre>
             </div>
-            <div class="raw-callout"><div class="raw-symbol">↗</div><div><strong>Inspect the source before you run it</strong><p><a href="/raw" target="_blank" rel="noreferrer">cpanel.pages.dev/raw</a> serves the latest <code>Init.lua</code> contents as plain text.</p></div></div>
-            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Developer loader</strong><p>Developers use a separate loader that also supplies the token: set <code>getgenv().CPanelDevToken</code> before loading. Participants do not need a token — the standard loader above is enough.</p></div></div>
+            <div class="raw-callout"><div class="raw-symbol">↗</div><div><strong>Inspect the source before you run it</strong><p><a href="/raw" target="_blank" rel="noreferrer">getcpanel.pages.dev/raw</a> always serves the latest client as plain text.</p></div></div>
+            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Developer loader</strong><p>Developers set <code>getgenv().CPanelDevToken</code> before loading. Participants don't need a token — the loader above is enough.</p></div></div>
         </section>
 
         <section class="section" id="how-it-works">
-            <div class="section-heading"><div class="eyebrow">HOW IT WORKS</div><h2>Five steps, start to finish.</h2><p>CPanel uses a WebSocket backend to connect the client and the developer dashboard.</p></div>
+            <div class="section-heading"><div class="eyebrow">HOW IT WORKS</div><h2>Five steps, start to finish.</h2></div>
             <ol class="steps">
                 <li><div><b>Add the loader</b><span>Drop the CPanel loader into your Roblox script.</span></div></li>
                 <li><div><b>A user executes the script</b><span>The CPanel client starts with it.</span></div></li>
-                <li><div><b>The client connects</b><span>It opens a connection to the configured WebSocket server.</span></div></li>
+                <li><div><b>The client connects</b><span>It opens a connection to your configured WebSocket server and persists the endpoint.</span></div></li>
                 <li><div><b>The server registers the connection</b><span>It checks developer authorization before granting access.</span></div></li>
-                <li><div><b>The dashboard takes over</b><span>Authorized developers open the dashboard and interact with connected participants.</span></div></li>
+                <li><div><b>The dashboard takes over</b><span>Authorized developers open the dashboard and act on connected participants.</span></div></li>
             </ol>
             <div class="table-wrap">
                 <table>
@@ -231,16 +279,25 @@ end)</code></pre>
                 </ol>
                 <div class="endpoint">wss://your-websocket.onrender.com</div>
             </div>
-            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Keep the token private</strong><p>A token placed in a client-side script can be extracted by anyone who receives that script. Treat it as a shared credential, not as a secure way to prove a developer's identity.</p></div></div>
+            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>Keep the token private</strong><p>A token placed in a client-side script can be extracted by anyone who receives that script. Treat it as a shared credential, not as a secure way to prove identity.</p></div></div>
         </section>
 
         <section class="section" id="important">
             <div class="section-heading"><div class="eyebrow">IMPORTANT</div><h2>Know the limits.</h2></div>
-            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>CPanel cannot control players who have not loaded a script containing its client.</strong><p>It does not automatically connect to every player in a Roblox server. Participants register when their CPanel client connects, and actions are processed by the receiving client's CPanel instance.</p></div></div>
+            <div class="note-callout"><div class="raw-symbol">!</div><div><strong>CPanel cannot control players who have not loaded a script containing its client.</strong><p>It does not automatically connect to every player in a Roblox server. Participants register when their client connects, and actions are processed by the receiving client's CPanel instance.</p></div></div>
         </section>
     </main>
     <footer class="footer"><a class="footer-brand" href="/"><img src="/logo.png" alt=""> CPanel</a><span>A centralized Roblox control panel.</span><a href="/raw">Raw source ↗</a></footer>
     <script>
+        const tabs = document.querySelectorAll(".tab");
+        const panels = document.querySelectorAll(".tab-panel");
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                tabs.forEach((t) => t.classList.toggle("active", t === tab));
+                panels.forEach((p) => p.classList.toggle("active", p.dataset.panel === tab.dataset.tab));
+            });
+        });
+
         const copyButton = document.querySelector("#copy-loader");
         const loaderCode = document.querySelector("#loader-code");
         copyButton?.addEventListener("click", async () => {
