@@ -60,7 +60,17 @@ const html = `<!doctype html>
         .secondary { background: #202027; border: 1px solid var(--line); color: #d0d0d9; }
         .hero-note { margin-top: 22px; color: #777783; font-size: 11px; }
         .hero-note b { color: var(--green); margin-right: 6px; }
-        .shot img { display: block; width: 100%; height: auto; }
+        .shot { position: relative; }
+        .shot::before {
+            content: "";
+            position: absolute;
+            inset: 6% 4% -8%;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(57,127,244,.45), rgba(91,84,216,.2) 55%, transparent 78%);
+            filter: blur(34px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .shot img { display: block; width: 100%; height: auto; position: relative; }
         .section, .get-started { max-width: 1172px; margin: 0 auto; padding: 74px 34px; }
         .section { border-top: 1px solid var(--line); }
         .section-heading { text-align: center; }
