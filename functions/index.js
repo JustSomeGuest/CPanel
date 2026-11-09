@@ -60,7 +60,6 @@ const html = `<!doctype html>
         .secondary { background: #202027; border: 1px solid var(--line); color: #d0d0d9; }
         .hero-note { margin-top: 22px; color: #777783; font-size: 11px; }
         .hero-note b { color: var(--green); margin-right: 6px; }
-        .shot { overflow: hidden; border: 1px solid #34343d; border-radius: 20px; background: #111115; box-shadow: 0 35px 100px #0008, 0 0 0 5px #ffffff04; transform: perspective(1400px) rotateY(-3deg) rotateX(1deg); }
         .shot img { display: block; width: 100%; height: auto; }
         .section, .get-started { max-width: 1172px; margin: 0 auto; padding: 74px 34px; }
         .section { border-top: 1px solid var(--line); }
@@ -120,7 +119,7 @@ const html = `<!doctype html>
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; gap: 42px; padding-top: 68px; }
             .hero-copy { max-width: 650px; }
-            .shot { transform: none; max-width: 760px; width: 100%; margin: auto; }
+            .shot { max-width: 760px; width: 100%; margin: auto; }
         }
         @media (max-width: 620px) {
             .topbar { height: 68px; padding: 0 20px; }
