@@ -6,6 +6,20 @@ const html = `<!doctype html>
     <meta name="theme-color" content="#111115">
     <meta name="description" content="CPanel - A centralized Roblox control panel. Participant management, player actions, audio, visual effects and camera control in one interface.">
     <title>CPanel - A centralized Roblox control panel</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CPanel">
+    <meta property="og:title" content="CPanel">
+    <meta property="og:description" content="A centralized Roblox control panel. Manage connected participants, player actions, audio, visuals and camera effects from one window.">
+    <meta property="og:url" content="https://getcpanel.pages.dev/">
+    <meta property="og:image" content="https://getcpanel.pages.dev/screenshot.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1802">
+    <meta property="og:image:height" content="1014">
+    <meta property="og:image:alt" content="CPanel dashboard screenshot">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CPanel">
+    <meta name="twitter:description" content="A centralized Roblox control panel. Manage connected participants, player actions, audio, visuals and camera effects from one window.">
+    <meta name="twitter:image" content="https://getcpanel.pages.dev/screenshot.png">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
